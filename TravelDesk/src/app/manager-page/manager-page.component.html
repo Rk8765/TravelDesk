@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Actions</title>
+    <link rel="stylesheet" href="./manager-page.component.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-title">Manager Dashboard</div>
+        <div class="navbar-login">
+            <button onclick="location.href='logout.html'">Logout</button>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Manage Requests</h1>
+        <div class="form-group">
+            <label for="requestId">Select Request ID</label>
+            <select id="requestId">
+                <option value="">Select</option>
+                <option value="REQ001">REQ001</option>
+                <option value="REQ002">REQ002</option>
+                <option value="REQ003">REQ003</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea id="comments" rows="4" placeholder="Enter comments here..."></textarea>
+        </div>
+        <div class="form-actions">
+            <button onclick="performAction('approve')">Approve</button>
+            <button onclick="performAction('disapprove')">Disapprove</button>
+            <button onclick="performAction('return')">Return to Employee</button>
+        </div>
+    </div>
+
+    <script>
+        function performAction(action) {
+            const requestId = document.getElementById('requestId').value;
+            const comments = document.getElementById('comments').value;
+
+            if (!requestId || !comments) {
+                alert('Please select a request ID and enter comments.');
+                return;
+            }
+
+            // Logic to handle the action (e.g., send to server, update database)
+            // This is a placeholder for demonstration
+            alert(`Request ${requestId} has been ${action}d with comments: ${comments}`);
+
+            if (action === 'approve') {
+                // Notification logic for approval
+                alert(`Notification: Request ${requestId} has been approved.`);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { ManagerPageComponent } from './manager-page/manager-page.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,12 @@ const routes: Routes = [
   {
     path:'AdminDashboard',
     component:AdminPageComponent,
+    pathMatch:"full"
+  }
+  ,
+  {
+    path:'ManagerPage',
+    component:ManagerPageComponent,
     pathMatch:"full"
   }
   
